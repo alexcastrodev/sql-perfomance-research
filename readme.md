@@ -226,6 +226,8 @@ The Nested Loop Left Join is performed based on the hash condition (inquiries.us
 
 The big difference is when we use LIMIT:
 
+Without Indexes:
+
 ```sql
 -- Time: 0.032s
 select username, message from inquiries 
@@ -248,6 +250,7 @@ inner join inquiries ON users.user_id = inquiries.user_id
 where inquiries.user_id = '2' LIMIT 10;
 ```
 
+With Indexes:
 
 ```sql
 -- Time: 0.018s
