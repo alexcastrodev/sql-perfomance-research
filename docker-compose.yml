@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_DB: alekinho
+      POSTGRES_USER: alekinho
+      POSTGRES_PASSWORD: alekinho123
+    ports:
+      - "5430:5432"
+    volumes:
+      - /Volumes/database/postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
